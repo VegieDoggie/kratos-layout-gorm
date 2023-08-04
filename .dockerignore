@@ -1,0 +1,6 @@
+.gitignore
+.git/
+.vscode/
+.idea/
+LICENSE
+README.md
