@@ -34,6 +34,7 @@ config:
 	protoc --proto_path=./internal \
 	       --proto_path=./third_party \
  	       --go_out=paths=source_relative:./internal \
+		   --validate_out=paths=source_relative,lang=go:./internal \
 	       $(INTERNAL_PROTO_FILES)
 
 .PHONY: api
@@ -45,6 +46,7 @@ api:
  	       --go-http_out=paths=source_relative:./api \
  	       --go-grpc_out=paths=source_relative:./api \
  	       --go-errors_out=paths=source_relative:./api \
+		   --validate_out=paths=source_relative,lang=go:./api \
 	       --openapi_out=fq_schema_naming=true,default_response=false:. \
 	       $(API_PROTO_FILES)
 
